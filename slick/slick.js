@@ -2813,7 +2813,7 @@
         verticalSwipeLength = Math.round(Math.sqrt(
             Math.pow(_.touchObject.curY - _.touchObject.startY, 2)));
 
-        if (!_.options.verticalSwiping && !_.swiping && verticalSwipeLength > 4) {
+        if (!_.options.verticalSwiping && !_.swiping && verticalSwipeLength > 40) {
             _.scrolling = true;
             return false;
         }
@@ -2824,7 +2824,7 @@
 
         swipeDirection = _.swipeDirection();
 
-        if (event.originalEvent !== undefined && _.touchObject.swipeLength > 4) {
+        if (event.originalEvent !== undefined && _.touchObject.swipeLength > 40) {
             _.swiping = true;
             event.preventDefault();
         }
