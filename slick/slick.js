@@ -817,16 +817,20 @@
 
     };
 
+    
+
     Slick.prototype.cleanUpRows = function() {
 
         var _ = this, originalSlides;
-
+  
         if(_.options.rows > 0) {
-            originalSlides = _.$slides.children().children();
-            originalSlides.removeAttr('style');
-            _.$slider.empty().append(originalSlides);
+          originalSlides = _.$slides.children().children();
+            originalSlides.removeAttr("style");
+            _.$slider.children().detach();
+  
+            _.$slider.append(originalSlides);
         }
-
+  
     };
 
     Slick.prototype.clickHandler = function(event) {
